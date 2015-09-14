@@ -1,0 +1,19 @@
+﻿{
+	"name": "Блэк лист для сайта ru.investing.com",
+	"description": "Блэк лист для сайта ru.investing.com",
+	"version": "1",
+	"manifest_version": 2, 
+	"browser_action": {
+		"name": "Блэк лист для сайта ru.investing.com"
+	},
+	"icons": {
+		"128":"user.png"
+	},  
+	"permissions": [
+		"storage"
+	],  
+	"content_scripts": [ {
+		"js": [ "background.js" ],
+		"matches": ["http://ru.investing.com/*"]
+	}]
+}

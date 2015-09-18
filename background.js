@@ -1,5 +1,4 @@
-﻿
-(function() {
+﻿(function() {
 	var getElement = function(html) {
 		var el = document.createElement("div");
 		el.innerHTML = html;

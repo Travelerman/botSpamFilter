@@ -110,7 +110,7 @@
 					}
 				}
 				for(var index = 0;enabled && index < elements.length; index++) {
-					if (elements[index].text.trim() in hash) {
+					if (String(elements[index].text).trim() in hash) {
 						elements[index].parentNode.parentNode.style.cssText = "display:none;";
 						elements[index].setAttribute("blocked", "1");
 					}

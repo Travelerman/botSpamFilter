@@ -101,7 +101,7 @@
 					enabled = el.checked == true;
 				}
 				for(var index = 0; index < this.list.length; index++) {
-					hash[this.list[index].trim()] = true;
+					hash[String(this.list[index]).replace(/  +/g, ' ').trim()] = true;
 				}
 				for(var index = 0; index < blocked.length; index++) {
 					if (!(blocked[index].text in hash) || !enabled) {
@@ -110,7 +110,11 @@
 					}
 				}
 				for(var index = 0;enabled && index < elements.length; index++) {
-					if (String(elements[index].text).trim() in hash) {
+					if (
+						String(elements[index].text).replace(/  +/g, ' ').trim() in hash
+						||
+						String(elements[index].innerText).replace(/  +/g, ' ').trim() in hash
+						) {						
 						elements[index].parentNode.parentNode.style.cssText = "display:none;";
 						elements[index].setAttribute("blocked", "1");
 					}
